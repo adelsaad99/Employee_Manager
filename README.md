@@ -56,31 +56,22 @@ npm start
 cd frontend
 npm start
 
-employee-manager/
+Employee_Manager/
 ├── backend/
-│   ├── models/
-│   │   └── Employee.js
-│   ├── routes/
-│   │   ├── employees.js
-│   │   └── search.js
+│   ├── models/Employee.js
+│   ├── routes/employees.js
+│   ├── routes/search.js
 │   ├── server.js
-│   ├── package.json
 │   └── .env
 ├── frontend/
-│   ├── public/
 │   ├── src/
-│   │   ├── components/
-│   │   │   ├── EmployeeForm.js
-│   │   │   └── EmployeeTable.js
-│   │   ├── services/
-│   │   │   └── api.js
-│   │   ├── styles/
-│   │   │   └── EmployeeForm.css
-│   │   ├── App.js
-│   │   └── index.js
-│   ├── package.json
-│   └── README.md
+│   │   ├── components/EmployeeForm.js
+│   │   ├── components/EmployeeTable.js
+│   │   ├── services/api.js
+│   │   └── styles/EmployeeForm.css
+│   └── package.json
 └── README.md
+
 
 Demo
 https://./frontend/src/assets/demo-screenshot.png
