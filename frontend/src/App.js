@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import EmployeeForm from './components/EmployeeForm';
 import EmployeeList from './components/EmployeeList';
 import SearchBar from './components/SearchBar';
-import { getEmployees } from './services/api';
+import { getEmployees, deleteEmployee } from './services/api';
 import './styles/global.css';
 import './styles/SearchBar.css';
 
@@ -11,12 +11,11 @@ function App() {
   const [searchResults, setSearchResults] = useState([]); // Filtered employees from search
   const [editingEmployee, setEditingEmployee] = useState(null); // Employee being edited
 
-  // Fetch employees when component mounts
+  // Fetch employees on mount
   useEffect(() => {
     fetchEmployees();
   }, []);
 
-  // Fetch all employees from API
   const fetchEmployees = async () => {
     try {
       const res = await getEmployees();
@@ -24,28 +23,42 @@ function App() {
       setSearchResults(res.data);
     } catch (err) {
       console.error("Fetch employees error:", err);
+      alert("Failed to fetch employees. Check console for details.");
     }
   };
 
-  // Set employee for editing
+  // Handle editing an employee
   const handleEdit = (employee) => {
     setEditingEmployee(employee);
+  };
+
+  // Handle deleting an employee
+  const handleDelete = async (id) => {
+    try {
+      await deleteEmployee(id); // Call backend
+      // Remove from state
+      setEmployees(employees.filter(e => e._id !== id));
+      setSearchResults(searchResults.filter(e => e._id !== id));
+    } catch (err) {
+      console.error("Delete failed:", err.response?.data || err.message);
+      alert(err.response?.data?.message || "Failed to delete employee");
+    }
   };
 
   return (
     <div className="App">
       <h1>Employee Manager</h1>
 
-      {/* Employee Form Section */}
+      {/* Employee Form */}
       <section className="form-section">
         <EmployeeForm
-          editingEmployee={editingEmployee} // Pass editing employee to form
+          editingEmployee={editingEmployee}
           onAdd={(emp) => {
             if (editingEmployee) {
               // Replace the updated employee in state
               setEmployees(employees.map(e => e._id === emp._id ? emp : e));
               setSearchResults(searchResults.map(e => e._id === emp._id ? emp : e));
-              setEditingEmployee(null); // Clear editing state
+              setEditingEmployee(null);
             } else {
               // Add new employee
               setEmployees([...employees, emp]);
@@ -55,24 +68,20 @@ function App() {
         />
       </section>
 
-      {/* Search Bar Section */}
+      {/* Search Bar */}
       <section className="search-section">
         <SearchBar
-          employees={employees} 
-          onSearch={results => setSearchResults(results)} // Update search results
+          employees={employees}
+          onSearch={results => setSearchResults(results)}
         />
       </section>
 
-      {/* Employee Table Section */}
+      {/* Employee List */}
       <section className="table-section">
         <EmployeeList
-          employees={searchResults} 
-          onDelete={id => {
-            // Remove employee from state
-            setEmployees(employees.filter(e => e._id !== id));
-            setSearchResults(searchResults.filter(e => e._id !== id));
-          }}
-          onEdit={handleEdit} // Pass edit handler
+          employees={searchResults}
+          onDelete={handleDelete}
+          onEdit={handleEdit}
         />
       </section>
     </div>
