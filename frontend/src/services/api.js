@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api';
+//  Render backend URL
+const API_URL = 'https://employee-manager-lqdr.onrender.com/api';
 
 // Get all employees
 export const getEmployees = () => axios.get(`${API_URL}/employees`);
