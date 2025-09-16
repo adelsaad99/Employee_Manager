@@ -55,7 +55,8 @@ npm start
 
 cd frontend
 npm start
----
+
+## 📂 Folder Structure
 Employee_Manager/
 ├── backend/
 │   ├── models/Employee.js
@@ -73,5 +74,5 @@ Employee_Manager/
 └── README.md
 
 ---
-Demo
+## 📷 Preview
 https://./frontend/src/assets/demo-screenshot.png
