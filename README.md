@@ -80,6 +80,7 @@ Start the frontend
 cd frontend
 npm start
 
+```bash
 📂 Folder Structure
 Employee_Manager/
 ├── backend/
@@ -99,4 +100,4 @@ Employee_Manager/
 
 ---
 ## 📷 Preview
-https://./frontend/src/assets/demo-screenshot.png
+![Employee Manager Demo](./frontend/demo-screenshot.png)
