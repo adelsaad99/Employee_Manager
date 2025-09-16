@@ -1,0 +1,42 @@
+.employee-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.employee-form input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  flex: 1 1 200px;
+  font-size: 14px;
+}
+
+.employee-form button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.employee-form button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.error-msg {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.error-message {
+  color: red;
+  margin-top: 8px;
+  font-size: 0.9rem;
+}

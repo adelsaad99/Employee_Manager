@@ -1,0 +1,21 @@
+.App {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f5f7fa;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 30px;
+  background: linear-gradient(90deg, #4b6cb7, #182848);
+  -webkit-background-clip: text; /* Safari/Chrome */
+  -moz-background-clip: text;    /* Firefox (older versions) */
+  background-clip: text;          /* Standard */
+  -webkit-text-fill-color: transparent; /* Safari/Chrome */
+  color: transparent;                 /* Standard fallback */
+}

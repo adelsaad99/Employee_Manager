@@ -1,0 +1,82 @@
+.table-container {
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+.employee-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.employee-table thead {
+  background: linear-gradient(90deg, #4b6cb7, #182848);
+  color: white;
+  text-transform: uppercase;
+}
+
+.employee-table th, .employee-table td {
+  padding: 12px 20px;
+  text-align: left;
+}
+
+.employee-table tbody tr {
+  background: #f0f4f8;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.employee-table tbody tr:nth-child(even) {
+  background: #e4ebf5;
+}
+
+.employee-table tbody tr:hover {
+  background: #d0d9f2;
+  transform: scale(1.01);
+}
+
+.delete-btn {
+  background: #ff4b5c;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.delete-btn:hover {
+  background: #ff1f3b;
+}
+
+@media (max-width: 768px) {
+  .employee-table th, .employee-table td {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .delete-btn {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+}
+
+
+/* Edit button style */
+.edit-btn {
+  background-color: #4caf50;   /* Green background */
+  color: #fff;                 /* White text */
+  border: none;                /* Remove default border */
+  padding: 6px 12px;           /* Button padding */
+  border-radius: 4px;          /* Rounded corners */
+  cursor: pointer;             /* Pointer on hover */
+  font-size: 14px;             /* Text size */
+  transition: background 0.3s; /* Smooth hover transition */
+}
+
+.edit-btn:hover {
+  background-color: #45a049;   /* Darker green on hover */
+}
