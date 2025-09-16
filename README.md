@@ -55,7 +55,7 @@ npm start
 
 cd frontend
 npm start
-
+---
 Employee_Manager/
 ├── backend/
 │   ├── models/Employee.js
@@ -72,6 +72,6 @@ Employee_Manager/
 │   └── package.json
 └── README.md
 
-
+---
 Demo
 https://./frontend/src/assets/demo-screenshot.png
