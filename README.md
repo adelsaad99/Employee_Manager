@@ -30,33 +30,57 @@ Before running this application, make sure you have the following installed:
 
 ## Installation
 
-1. Clone the repository:
-```bash
+Prerequisites
+
+Node.js (v14 or higher)
+
+MongoDB (local installation or MongoDB Atlas account)
+
+npm or yarn
+
+Installation
+
+Clone the repository
+
 git clone <your-repo-link>
 cd employee-manager
 
+
+Install backend dependencies
+
 cd backend
 npm install
+
+
+Install frontend dependencies
 
 cd ../frontend
 npm install
 
-Set up environment variables:
 
-Create a .env file in the backend folder
+Set up environment variables
 
-Add the following variables:
+Create a .env file inside the backend folder
+
+Add the following:
+
 PORT=5000
 MONGODB_URI=mongodb://localhost:27017/employee_manager
 NODE_ENV=development
 
+
+Start the backend server
+
 cd backend
 npm start
+
+
+Start the frontend
 
 cd frontend
 npm start
 
-## 📂 Folder Structure
+📂 Folder Structure
 Employee_Manager/
 ├── backend/
 │   ├── models/Employee.js
