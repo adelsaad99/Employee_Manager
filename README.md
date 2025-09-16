@@ -38,59 +38,52 @@ Users can manage employees efficiently with inline validation and duplicate emai
 
 ---
 
-### 💻 Installation
+## 💻 Installation & Demo
 
-1. Clone the repository:
-```bash
-git clone <your-repo-link>
-cd employee-manager
+git clone <your-repo-link>  
+cd employee-manager  
 
-Install backend dependencies:
+**Install backend dependencies:**  
+cd backend  
+npm install  
 
-cd backend
-npm install
+**Install frontend dependencies:**  
+cd ../frontend  
+npm install  
 
+**Create `.env` file inside backend folder with:**  
+PORT=5000  
+MONGODB_URI=mongodb://localhost:27017/employee_manager  
+NODE_ENV=development  
 
-Install frontend dependencies:
+**Start the backend:**  
+cd backend  
+npm start  
 
-cd ../frontend
-npm install
+**Start the frontend:**  
+cd frontend  
+npm start  
 
+<p align="center">
+  <img src="./frontend/demo-screenshot.png" alt="Employee Manager Demo" width="800"/>
+</p>
 
-Create .env file inside backend folder with:
+---
 
-PORT=5000
-MONGODB_URI=mongodb://localhost:27017/employee_manager
-NODE_ENV=development
+## 📂 Folder Structure
 
-
-Start the backend:
-
-cd backend
-npm start
-
-
-Start the frontend:
-
-cd frontend
-npm start
-
-Employee_Manager/
-├── backend/
-│   ├── models/Employee.js
-│   ├── routes/employees.js
-│   ├── routes/search.js
-│   ├── server.js
-│   └── .env
-├── frontend/
-│   ├── src/
-│   │   ├── components/EmployeeForm.js
-│   │   ├── components/EmployeeTable.js
-│   │   ├── services/api.js
-│   │   └── styles/EmployeeForm.css
-│   └── package.json
-└── README.md
-
-### 📸 Demo Screenshot
-
-![Employee Manager Demo](./frontend/demo-screenshot.png)
+Employee_Manager/  
+├── backend/  
+│   ├── models/Employee.js  
+│   ├── routes/employees.js  
+│   ├── routes/search.js  
+│   ├── server.js  
+│   └── .env  
+├── frontend/  
+│   ├── src/  
+│   │   ├── components/EmployeeForm.js  
+│   │   ├── components/EmployeeTable.js  
+│   │   ├── services/api.js  
+│   │   └── styles/EmployeeForm.css  
+│   └── package.json  
+└── README.md  
