@@ -1,19 +1,18 @@
-require('dotenv').config(); // Load environment variables
-
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
-const employeeRoutes = require('./routes/employees'); 
-const searchRoutes = require('./routes/search');      
+const employeeRoutes = require('./routes/employees');
+const searchRoutes = require('./routes/search');
 
 const app = express();
 
 // Middleware
-app.use(cors());          
-app.use(express.json());  
+app.use(cors()); // allow all origins
+app.use(express.json()); // parse JSON requests
 
-// Connect to MongoDB Atlas
+// MongoDB connection
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -30,6 +29,8 @@ app.get('/', (req, res) => {
   res.send("Employee Manager Backend is running");
 });
 
-// Start server
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// Bind to Render port
+const PORT = process.env.PORT || 5000; // Render will set this automatically
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server running on port ${PORT}`);
+});
