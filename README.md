@@ -37,6 +37,12 @@ Users can manage employees efficiently with inline validation and duplicate emai
 - 🔑 **dotenv**  
 
 ---
+## 🌐 Live Demo
+
+Check out the Employee Manager live application here:  
+👉 [https://employee-manager-frontend-k1c4.onrender.com/](https://employee-manager-frontend-k1c4.onrender.com/)
+
+Feel free to explore the features and interact with the application.
 
 ## 💻 Installation & Demo
 
@@ -87,3 +93,4 @@ Employee_Manager/
 │   │   └── styles/EmployeeForm.css  
 │   └── package.json  
 └── README.md  
+
